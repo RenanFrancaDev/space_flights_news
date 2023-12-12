@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const url = "https://api.spaceflightnewsapi.net/v4/articles/?limit=2";
+const url = `https://api.spaceflightnewsapi.net/v4/articles`;
 
 export class NewsService {
-  static getNews() {
-    return axios(url);
+  static getNews(limit, offset) {
+    return axios(url + `/?limit=${limit}&offset=${offset}`);
   }
 
   static getNewsDetails(id) {
