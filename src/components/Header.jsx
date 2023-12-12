@@ -1,14 +1,14 @@
-const Header = (searchProps, sortProps) => {
+const Header = ({ searchProps, sortProps }) => {
   function handleSubmit(e) {
     e.preventDefault();
     const searchValue = e.target[0].value;
-    searchProps.onSubmit(searchValue);
+    searchProps(searchValue);
     e.target[0].value = "";
   }
 
   function handleChange(e) {
     const sortValue = e.target.value;
-    sortProps.onChange(sortValue);
+    sortProps(sortValue);
   }
 
   return (

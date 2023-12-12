@@ -1,6 +1,4 @@
 const Card = ({ data }) => {
-  console.log("card:", data);
-
   return (
     <div className="flex flex-row gap-4">
       <div>

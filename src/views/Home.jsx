@@ -2,14 +2,15 @@ import { useEffect, useState } from "react";
 import { NewsService } from "../api/NewsService";
 import Card from "../components/Card";
 
-const Home = (searchValue) => {
-  console.log(searchValue);
+const Home = ({ searchValueProp, sortValueProp }) => {
+  console.log(searchValueProp);
+  console.log(sortValueProp);
   const [news, setNews] = useState([]);
 
   const getNews = async () => {
     const { data } = await NewsService.getNews();
     setNews(data.results);
-    console.log(news);
+    // console.log(news);
   };
 
   useEffect(() => {
@@ -22,19 +23,19 @@ const Home = (searchValue) => {
   };
 
   useEffect(() => {
-    if (searchValue.length > 0) {
+    if (searchValueProp.length > 0) {
       getNewsSearch();
-      console.log("123");
     }
-    if (searchValue === "") {
+    if (searchValueProp === "") {
       getNews();
-      console.log("eu");
     }
-  }, [searchValue]);
+  }, [searchValueProp]);
 
   return (
-    <div className="w-full flex justify-center">
-      <Card data={news} />
+    <div className="w-full flex flex-col justify-center">
+      {news.map((item, index) => {
+        return <Card key={index} data={item} />;
+      })}
     </div>
   );
 };

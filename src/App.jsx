@@ -10,10 +10,7 @@ const App = () => {
 
   return (
     <>
-      <Header
-        onSubmit={(inputValue) => setSearchValue(inputValue)}
-        onchange={(sortValue) => setSortValue(sortValue)}
-      />
+      <Header searchProps={setSearchValue} sortProps={setSortValue} />
       <Routes>
         <Route
           path="/"
