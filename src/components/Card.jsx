@@ -16,22 +16,24 @@ const Card = ({ data }) => {
           alt={data.title}
           height={0}
           width={0}
-          className="w-[250px]"
+          className="w-[320px]"
         />
       </div>
 
-      <div className="flex flex-col w-[400px] gap-4">
-        <h2>{data.title}</h2>
+      <div className="flex flex-col max-w-[400px] gap-2">
+        <h2 className="font-semibold   text-base">{data.title}</h2>
         <div className="flex items-center justify-between mx-2">
           <small>{dayFormat}</small>
-          <p href={data.url} className="border-2 border-black bg-gray-300 px-1">
+          <a href={data.url} className="border-2 border-black bg-gray-300 px-1">
             {data.news_site}
-          </p>
+          </a>
         </div>
-        <p className="overflow-hidden h-[100px]">{data.summary}...</p>
+        <p className="overflow-hidden min-h-[50px] text-sm">
+          {data.summary}...
+        </p>
         <a
           href={data.url}
-          className="border-2 w-[100px] text-center text-white py-2"
+          className="border-2 w-[100px] text-center text-white py-2 bg-slate-600"
         >
           Ver mais
         </a>
