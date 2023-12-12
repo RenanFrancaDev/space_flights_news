@@ -53,7 +53,12 @@ const Home = ({ searchValueProp, sortValueProp }) => {
       {news.map((item, index) => {
         return <Card key={index} data={item} />;
       })}
-      <button onClick={handleClick}>Ver Mais</button>
+      <button
+        className="mb-2 p-2 text-fuchsia-600 border-fuchsia-600 border-2 "
+        onClick={handleClick}
+      >
+        Carregar Mais
+      </button>
     </div>
   );
 };

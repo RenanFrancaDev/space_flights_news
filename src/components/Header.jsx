@@ -12,8 +12,8 @@ const Header = ({ searchProps, sortProps }) => {
   }
 
   return (
-    <header className="flex justify-between">
-      <h1>Flights</h1>
+    <header className="flex justify-between mb-20 py-2 mx-2 border-b-2">
+      <img src="../../public/images/fire-dev_SVG.svg" alt="logo" width={125} />
       <div className="flex justify-end">
         <form onSubmit={handleSubmit}>
           <input
@@ -24,7 +24,7 @@ const Header = ({ searchProps, sortProps }) => {
         </form>
         <select
           id="sort"
-          className="w-[120px] border-2 mx-2"
+          className="w-[120px] h-[28px] border-2 mx-2"
           onChange={handleChange}
         >
           <option value="">Sort</option>
