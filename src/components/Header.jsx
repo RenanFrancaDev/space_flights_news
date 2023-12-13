@@ -28,8 +28,8 @@ const Header = ({ searchProps, sortProps }) => {
           onChange={handleChange}
         >
           <option value="">Sort</option>
-          <option value="-1">Mais Antigas</option>
-          <option value="1">Mais Novas</option>
+          <option value="-1">Mais Novas</option>
+          <option value="1">Mais Antigas</option>
         </select>
       </div>
     </header>

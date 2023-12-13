@@ -2,10 +2,8 @@ const Card = ({ data }) => {
   var date = new Date(data.published_at);
 
   let day = date.getDate();
-  // day.length > 1 ? day : "0" + day;
   let month = date.getMonth() + 1;
   let year = date.getFullYear();
-
   let dayFormat = day + "/" + month + "/" + year;
 
   return (

@@ -10,16 +10,30 @@ const Home = ({ searchValueProp, sortValueProp }) => {
   const [offset, setOffset] = useState(0);
 
   const getNews = async (limit, offset) => {
-    console.log("limit", limit);
-    console.log("offset", offset);
-    const { data } = await NewsService.getNews(limit, offset);
-    setNews(data.results);
+    if (sortValueProp == "") {
+      const { data } = await NewsService.getNews(limit, offset);
+      return setNews(data.results);
+    }
+
+    if (sortValueProp != "") {
+      const { data } = await NewsService.getAllNews();
+
+      if (sortValueProp == "-1") {
+        console.log("mais nova");
+        data.results.sort((a, b) => {
+          return b.published_at.localeCompare(a.published_at);
+        });
+      }
+      if (sortValueProp == "1") {
+        console.log("mais antiga");
+        data.results.sort((a, b) => {
+          return a.published_at.localeCompare(b.published_at);
+        });
+      }
+      setNews(data.results);
+    }
     // console.log(news);
   };
-
-  useEffect(() => {
-    getNews(limit, offset);
-  }, []);
 
   const getNewsSearch = async (searchValueProp) => {
     const { data } = await NewsService.searchNews(searchValueProp);
@@ -46,7 +60,7 @@ const Home = ({ searchValueProp, sortValueProp }) => {
 
   useEffect(() => {
     getNews(limit, offset);
-  }, [offset]);
+  }, [offset, sortValueProp]);
 
   return (
     <div className="w-full flex flex-col justify-center items-center gap-16">
