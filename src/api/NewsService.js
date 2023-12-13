@@ -7,6 +7,10 @@ export class NewsService {
     return axios(url + `/?limit=${limit}&offset=${offset}`);
   }
 
+  static getAllNews() {
+    return axios(url + `/?limit=1000000&offset=0`);
+  }
+
   static getNewsDetails(id) {
     return axios(url + `/${id}`);
   }
