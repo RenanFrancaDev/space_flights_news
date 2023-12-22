@@ -15,11 +15,7 @@ const Header = ({ searchProps, sortProps }) => {
     <header className="flex justify-between mb-20 py-2 mx-2 border-b-2">
       <div className="w-2/6">
         {" "}
-        <img
-          src="../../public/images/fire-dev_SVG.svg"
-          alt="logo"
-          width={125}
-        />{" "}
+        <img src="./images/fire-dev_SVG.svg" alt="logo" width={125} />{" "}
       </div>
 
       <div className=" w-2/6 flex justify-center items-center text-center h-120">
