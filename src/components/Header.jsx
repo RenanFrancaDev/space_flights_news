@@ -13,8 +13,19 @@ const Header = ({ searchProps, sortProps }) => {
 
   return (
     <header className="flex justify-between mb-20 py-2 mx-2 border-b-2">
-      <img src="../../public/images/fire-dev_SVG.svg" alt="logo" width={125} />
-      <div className="flex justify-end">
+      <div className="w-2/6">
+        {" "}
+        <img
+          src="../../public/images/fire-dev_SVG.svg"
+          alt="logo"
+          width={125}
+        />{" "}
+      </div>
+
+      <div className=" w-2/6 flex justify-center items-center text-center h-120">
+        <h1 className="text-[42px]">Space Flights News 🚀</h1>
+      </div>
+      <div className=" w-2/6 flex justify-end">
         <form onSubmit={handleSubmit}>
           <input
             type="text"
